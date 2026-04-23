@@ -6,7 +6,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
 
     # Jika request sudah ke /public/, biarkan saja (cegah loop)
-    RewriteCond %{REQUEST_URI} !^/fix_monetrakeu/public/
+    RewriteCond %{REQUEST_URI} !^/montrackeu/public/
 
     # Arahkan semua request ke index.php di root
     RewriteRule ^ index.php [L]
