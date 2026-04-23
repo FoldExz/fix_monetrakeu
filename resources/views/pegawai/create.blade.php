@@ -330,7 +330,7 @@ $('#nip').on('input', function() {
         
         nipCheckTimeout = setTimeout(function() {
             $.ajax({
-                url: '/pegawai/check_nip',
+                url: `${BASE_URL}/pegawai/check_nip`,
                 type: 'POST',
                 data: {
                     _token: $('meta[name="csrf-token"]').attr('content'),
@@ -543,7 +543,7 @@ $('#id_provinsi').change(function () {
     $('#id_kecamatan').html('<option value="">-- Pilih Kecamatan --</option>');
     $('#id_kelurahan').html('<option value="">-- Pilih Kelurahan --</option>');
     if (provId) {
-        $.get(`/pegawai/provinsi/${provId}/kabupaten`, function (data) {
+        $.get(`${BASE_URL}/pegawai/provinsi/${provId}/kabupaten`, function (data) {
             var options = '<option value="">-- Pilih Kabupaten/Kota --</option>';
             data.forEach(item => {
                 options += `<option value="${item.id_kabupaten_kota}">${item.nama_kabupaten_kota}</option>`;
@@ -558,7 +558,7 @@ $('#id_kabupaten_kota').change(function () {
     $('#id_kecamatan').html('<option value="">Loading...</option>');
     $('#id_kelurahan').html('<option value="">-- Pilih Kelurahan --</option>');
     if (kabId) {
-        $.get(`/pegawai/kabupaten/${kabId}/kecamatan`, function (data) {
+        $.get(`${BASE_URL}/pegawai/kabupaten/${kabId}/kecamatan`, function (data) {
             var options = '<option value="">-- Pilih Kecamatan --</option>';
             data.forEach(item => {
                 options += `<option value="${item.id_kecamatan}">${item.nama_kecamatan}</option>`;
@@ -572,7 +572,7 @@ $('#id_kecamatan').change(function () {
     var kecId = $(this).val();
     $('#id_kelurahan').html('<option value="">Loading...</option>');
     if (kecId) {
-        $.get(`/pegawai/kecamatan/${kecId}/kelurahan`, function (data) {
+        $.get(`${BASE_URL}/pegawai/kecamatan/${kecId}/kelurahan`, function (data) {
             var options = '<option value="">-- Pilih Kelurahan --</option>';
             data.forEach(item => {
                 options += `<option value="${item.id_kelurahan}">${item.nama_kelurahan}</option>`;

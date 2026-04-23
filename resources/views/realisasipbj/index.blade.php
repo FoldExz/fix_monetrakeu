@@ -283,7 +283,7 @@
             // Ambil summary kegiatan (pagu&sisa)
             const kegiatanId = $('#h_kegiatan').val();
             if (kegiatanId) {
-                $.get(`/realisasipbj/kegiatan/${kegiatanId}/summary`).done(function(resp) {
+                $.get(`${BASE_URL}/realisasipbj/kegiatan/${kegiatanId}/summary`).done(function(resp) {
                     if (resp?.success) {
                         const {
                             total_pagu,
@@ -295,7 +295,7 @@
                 });
 
                 // Load sub kegiatan awal
-                $.get(`/realisasipbj/kegiatan/${kegiatanId}/sub_kegiatan`)
+                $.get(`${BASE_URL}/realisasipbj/kegiatan/${kegiatanId}/sub_kegiatan`)
                     .done(function(resp) {
                         if (resp?.success) {
                             populateSelect('#f_sub', resp.data, 'id_sub_kegiatan', 'kode_sub_kegiatan',
@@ -325,7 +325,7 @@
 
                     const subId = $opt.val();
                     setLoadingState('#f_rekening', 'Loading...');
-                    $.get(`/realisasipbj/sub_kegiatan/${subId}/rekening`)
+                    $.get(`${BASE_URL}/realisasipbj/sub_kegiatan/${subId}/rekening`)
                         .done(function(resp) {
                             if (resp?.success) {
                                 populateSelect('#f_rekening', resp.data, 'id_rekening', 'kode_rekening',
@@ -356,7 +356,7 @@
 
                     const rekeningId = $opt.val();
                     setLoadingState('#f_ssh', 'Loading...');
-                    $.get(`/realisasipbj/rekening/${rekeningId}/ssh`)
+                    $.get(`${BASE_URL}/realisasipbj/rekening/${rekeningId}/ssh`)
                         .done(function(resp) {
                             if (resp?.success) {
                                 $('#f_ssh').empty().append(`<option value="">-- Pilih SSH --</option>`);
@@ -682,7 +682,7 @@
                                         // 3) Update pagu&sisa berdasar SSH aktif
                                         const sshId = $('#h_ssh').val();
                                         if (sshId) {
-                                            $.get(`/realisasipbj/ssh/${sshId}/summary`, {
+                                            $.get(`${BASE_URL}/realisasipbj/ssh/${sshId}/summary`, {
                                                     _: Date.now()
                                                 })
                                                 .done(function(resp) {
@@ -790,7 +790,7 @@
                 historiTable = $('#tbl-histori').DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: `/realisasilpse/ssh/${sshId}/histori`,
+                    ajax: `${BASE_URL}/realisasipbj/ssh/${sshId}/histori`,
                     columns: [{
                             data: 'DT_RowIndex',
                             name: 'DT_RowIndex',

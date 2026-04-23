@@ -385,7 +385,7 @@ $(document).ready(function() {
 
     // Fungsi untuk load kabupaten/kota
     function loadKabupatenKota(provinsiId, selectedKabupaten = null) {
-        $.get(`/pegawai/provinsi/${provinsiId}/kabupaten`, function(data) {
+        $.get(`${BASE_URL}/pegawai/provinsi/${provinsiId}/kabupaten`, function(data) {
             var options = '<option value="">-- Pilih Kabupaten/Kota --</option>';
             data.forEach(item => {
                 var selected = selectedKabupaten == item.id_kabupaten_kota ? 'selected' : '';
@@ -397,7 +397,7 @@ $(document).ready(function() {
 
     // Fungsi untuk load kecamatan
     function loadKecamatan(kabupatenId, selectedKecamatan = null) {
-        $.get(`/pegawai/kabupaten/${kabupatenId}/kecamatan`, function(data) {
+        $.get(`${BASE_URL}/pegawai/kabupaten/${kabupatenId}/kecamatan`, function(data) {
             var options = '<option value="">-- Pilih Kecamatan --</option>';
             data.forEach(item => {
                 var selected = selectedKecamatan == item.id_kecamatan ? 'selected' : '';
@@ -409,7 +409,7 @@ $(document).ready(function() {
 
     // Fungsi untuk load kelurahan
     function loadKelurahan(kecamatanId, selectedKelurahan = null) {
-        $.get(`/pegawai/kecamatan/${kecamatanId}/kelurahan`, function(data) {
+        $.get(`${BASE_URL}/pegawai/kecamatan/${kecamatanId}/kelurahan`, function(data) {
             var options = '<option value="">-- Pilih Kelurahan --</option>';
             data.forEach(item => {
                 var selected = selectedKelurahan == item.id_kelurahan ? 'selected' : '';

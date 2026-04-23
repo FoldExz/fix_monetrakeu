@@ -342,7 +342,7 @@
                     const kegiatanId = $opt.val();
 
                     // Ambil summary kegiatan (pagu & sisa)
-                    $.get(`/realisasitatakelola/kegiatan/${kegiatanId}/summary`)
+                    $.get(`${BASE_URL}/realisasitatakelola/kegiatan/${kegiatanId}/summary`)
                         .done(function(resp) {
                             if (resp?.success) {
                                 const { total_pagu, sisa } = resp.data;
@@ -356,7 +356,7 @@
 
                     // Load sub kegiatan
                     setLoadingState('#f_sub', 'Loading...');
-                    $.get(`/realisasitatakelola/kegiatan/${kegiatanId}/sub_kegiatan`)
+                    $.get(`${BASE_URL}/realisasitatakelola/kegiatan/${kegiatanId}/sub_kegiatan`)
                         .done(function(resp) {
                             if (resp?.success) {
                                 populateSelect('#f_sub', resp.data, 'id_sub_kegiatan', 'kode_sub_kegiatan',
@@ -387,7 +387,7 @@
             // Ambil summary kegiatan (pagu & sisa saja)
             const kegiatanId = $('#h_kegiatan').val();
             if (kegiatanId) {
-                $.get(`/realisasitatakelola/kegiatan/${kegiatanId}/summary`)
+                $.get(`${BASE_URL}/realisasitatakelola/kegiatan/${kegiatanId}/summary`)
                     .done(function(resp) {
                         if (resp?.success) {
                             const {
@@ -400,7 +400,7 @@
                     });
 
                 // Load sub kegiatan awal
-                $.get(`/realisasitatakelola/kegiatan/${kegiatanId}/sub_kegiatan`)
+                $.get(`${BASE_URL}/realisasitatakelola/kegiatan/${kegiatanId}/sub_kegiatan`)
                     .done(function(resp) {
                         if (resp?.success) {
                             populateSelect('#f_sub', resp.data, 'id_sub_kegiatan', 'kode_sub_kegiatan',
@@ -431,7 +431,7 @@
 
                     const subId = $opt.val();
                     setLoadingState('#f_rekening', 'Loading...');
-                    $.get(`/realisasitatakelola/sub_kegiatan/${subId}/rekening`)
+                    $.get(`${BASE_URL}/realisasitatakelola/sub_kegiatan/${subId}/rekening`)
                         .done(function(resp) {
                             if (resp?.success) {
                                 populateSelect('#f_rekening', resp.data, 'id_rekening', 'kode_rekening',
@@ -463,7 +463,7 @@
 
                     const rekeningId = $opt.val();
                     setLoadingState('#f_ssh', 'Loading...');
-                    $.get(`/realisasitatakelola/rekening/${rekeningId}/ssh`)
+                    $.get(`${BASE_URL}/realisasitatakelola/rekening/${rekeningId}/ssh`)
                         .done(function(resp) {
                             if (resp?.success) {
                                 $('#f_ssh').empty().append(`<option value="">-- Pilih SSH --</option>`);
@@ -803,7 +803,7 @@
 
                                     const sshId = $('#h_ssh').val();
                                     if (sshId) {
-                                        $.get(`/realisasitatakelola/ssh/${sshId}/summary`, {
+                                        $.get(`${BASE_URL}/realisasitatakelola/ssh/${sshId}/summary`, {
                                                 _: Date.now()
                                             })
                                             .done(function(resp) {
@@ -912,7 +912,7 @@
                 historiTable = $('#tbl-histori').DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: `/realisasitatakelola/ssh/${sshId}/histori`,
+                    ajax: `${BASE_URL}/realisasitatakelola/ssh/${sshId}/histori`,
                     columns: [{
                             data: 'DT_RowIndex',
                             name: 'DT_RowIndex',
