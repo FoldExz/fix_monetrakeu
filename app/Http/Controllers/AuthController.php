@@ -85,7 +85,7 @@ class AuthController extends Controller
         session()->put('level', $user->level);
 
         return response()->json([
-            'redirect' => url('/dashboard'),
+            'redirect' => route('dashboard'),
             'message'  => 'Login berhasil.',
         ]);
     }
@@ -109,7 +109,7 @@ class AuthController extends Controller
 
         Auth::login($user); // langsung login setelah register
 
-        return redirect('/profile')->with('success', 'Registrasi berhasil.');
+        return redirect()->route('profile.index')->with('success', 'Registrasi berhasil.');
     }
 
     /**
@@ -122,7 +122,7 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/login')->with('success', 'Anda telah logout.');
+        return redirect()->route('login')->with('success', 'Anda telah logout.');
     }
 
     /**
