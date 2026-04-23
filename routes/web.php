@@ -27,7 +27,9 @@ use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Auth;
 
 
-Route::redirect('/', '/login');
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 
 // Login page (GET)
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
