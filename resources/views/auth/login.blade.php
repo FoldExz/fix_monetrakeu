@@ -6,10 +6,11 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap 5 -->
-  <link rel="stylesheet" href="{{ asset('stisla1/node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
+  <!-- Bootstrap 4 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="{{ asset('stisla1/assets/css/font-poppins.css') }}">
+  <!-- Google Fonts Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 
   <!-- AOS (Animate On Scroll) -->
@@ -939,7 +940,7 @@
               .prop('disabled', true);
 
             $.ajax({
-                url: '/login',
+                url: '{{ route("login") }}',
                 method: 'POST',
                 data: {
                     nip: nip,
