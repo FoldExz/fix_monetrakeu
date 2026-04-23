@@ -274,7 +274,8 @@ select.form-control:not([size]):not([multiple]) {
   left: initial;
   right: 0;
 }
-.form-group.floating-addon .input-group-prepend .input-group-text, .form-group.floating-addon .input-group-append .input-group-text {
+.form-group.floating-addon .input-group-prepend .input-group-text,
+.form-group.floating-addon .input-group-append .input-group-text {
   border-color: transparent;
   background-color: transparent;
   font-size: 20px;
@@ -1888,7 +1889,6 @@ h6 .badge {
   left: 0;
   width: 100%;
   height: 115px;
-  background-color: #6C757D;
   z-index: -1;
 }
 
