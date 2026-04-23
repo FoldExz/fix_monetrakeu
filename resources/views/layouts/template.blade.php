@@ -10,9 +10,9 @@
   <title>@yield('title') &mdash; Stisla</title>
 
   <!-- General CSS -->
-  <link rel="stylesheet" href="{{ asset('stisla1/node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('stisla1/node_modules/@fortawesome/fontawesome-free/css/all.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('stisla1/node_modules/ionicons201/css/ionicons.min.css') }}"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> 
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('stisla1/assets/css/style.css') }}">
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="{{ asset('stisla1/assets/css/custom.css') }}">
   
   <!--Chart Js -->
-  <link rel="stylesheet" href="{{ asset('stisla1/node_modules/chart.js/dist/Chart.min.css') }}"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css"> 
 
     <!-- Template Select2 -->
   <link rel="stylesheet" href="{{ asset('stisla1/assets/select2/css/select2.min.css') }}">
@@ -61,11 +61,11 @@
   </div>
 
   <!-- General JS Scripts -->
-  <script src="{{ asset('stisla1/node_modules/jquery/dist/jquery.min.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="{{ asset('stisla1/node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('stisla1/node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js') }}"></script>
-  <script src="{{ asset('stisla1/node_modules/jquery-ui-dist/jquery-ui.min.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
     <!-- Select2-->
   <script src="{{ asset('stisla1/assets/select2/js/select2.min.js') }}"></script>
@@ -82,10 +82,10 @@
 
 
   <!-- DataTables -->
-  <script src="{{ asset('stisla1/node_modules/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-  <script src="{{ asset('stisla1/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-  <script src="{{ asset('stisla1/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-  <script src="{{ asset('stisla1/node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
 
   <!-- Stisla Core JS -->
   <script src="{{ asset('stisla1/assets/js/stisla.js') }}"></script>
@@ -100,7 +100,7 @@
 <script src="{{ asset('stisla1/assets/js/sweetalert2.all.min.js') }}"></script>
 
 <!-- Chart js -->
-<script src="{{ asset('stisla1/node_modules/chart.js/dist/Chart.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 {{-- <script src="{{ asset('stisla1/js/page/dist/modules-chartjs.js') }}"></script> --}}
 {{-- <script src="{{ asset('stisla1/assets/js/page/modules-chartjs.js') }}"></script> --}}
 
