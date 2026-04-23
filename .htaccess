@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Jangan redirect jika file/folder memang benar-benar ada
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    # Jika request sudah ke /public/, biarkan saja (cegah loop)
+    RewriteCond %{REQUEST_URI} !^/fix_monetrakeu/public/
+
+    # Arahkan semua request ke index.php di root
+    RewriteRule ^ index.php [L]
+</IfModule>
