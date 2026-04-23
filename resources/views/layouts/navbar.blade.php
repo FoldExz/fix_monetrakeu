@@ -122,7 +122,7 @@
                     _token: '{{ csrf_token() }}'
                 },
                 success: function() {
-                    window.location.href = '/login';
+                    window.location.href = '{{ route("login") }}';
                 },
                 error: function(xhr) {
                     console.log(xhr);
